@@ -8,40 +8,46 @@ public class AgainstComputer extends Game implements GameEngine{
         super(pointsGoal, player);
         this.compPoints=0;
     }
+    public void playGame(Scanner input){
+
+        do{
+
+        }while(!goalReached());
+
+
+    }
+
     public void playRound(Scanner input){
         int choiceNum;
         String result = null;
-        do{
-            System.out.println("Rock, Paper, Scissors Game");
-            System.out.println("1. Rock\n2. Paper\n3. Scissors");
+        System.out.println("Rock, Paper, Scissors Game");
+        System.out.println("1. Rock\n2. Paper\n3. Scissors");
 
-            System.out.print("Enter your choice: ");
+        System.out.print("Enter your choice: ");
 
-            choiceNum = input.nextInt();
+        choiceNum = input.nextInt();
 
-            String compChoice = computerPlays();
+        String compChoice = computerPlays();
 
-            System.out.println("Computer plays " + compChoice);
+        System.out.println("Computer plays " + compChoice);
 
-            switch (choiceNum) {
-                case 1:
-                    result = playRock(compChoice);
-                    break;
-                case 2:
-                    result = playPaper(compChoice);
-                    break;
-                case 3:
-                    result = playScissors(compChoice);
-                    break;
-                case 0:
-                    break;
-                default:
-                    System.out.println("Invalid choice please try again.");
-                    break;
-            }
-            showResult(result);
-        }while(!goalReached());
-
+        switch (choiceNum) {
+            case 1:
+                result = playRock(compChoice);
+                break;
+            case 2:
+                result = playPaper(compChoice);
+                break;
+            case 3:
+                result = playScissors(compChoice);
+                break;
+            case 0:
+                break;
+            default:
+                System.out.println("Invalid choice please try again.");
+                break;
+        }
+        showResult(result);
 
     }
 
